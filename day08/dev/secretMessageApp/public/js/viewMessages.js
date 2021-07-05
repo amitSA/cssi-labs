@@ -36,3 +36,5 @@ const renderMessageAsHtml = (message) => {
  const messageDiv = document.querySelector("#message")
  messageDiv.innerHTML = message
 }
+
+console.log(document.cookie)

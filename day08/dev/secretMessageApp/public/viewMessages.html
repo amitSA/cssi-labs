@@ -39,9 +39,21 @@
         <section class="container">
             <h2 id="message" class="subtitle is-4"></h2>
         </section>
-
+        
+        <!--         
+        This is an example of an "cross-site-scripting" attack. 
+        Which means your "friend" could add a message with this value
+        and if you viewed this message, it would run arbitrary javascript on your browser. -->
+        <section class="container is-hidden">
+            <button id="xss-button" onmouseover="alert('hi')">Scroll over me </button>
+        </section>
+                
     </section>
-  <script src="js/viewMessages.js"></script>
+    
+    <script src="js/viewMessages.js"></script>
+  
+  
+
   </body>
 
 </html>
