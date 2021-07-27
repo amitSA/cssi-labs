@@ -5,7 +5,7 @@ function getMessages() {
     const messagesRef = firebase.database().ref()
     messagesRef.on('value', (snapshot) => {
         const messages = snapshot.val();
-        console.log(messages)
+        // console.log(messages)
         validateMessages(messages)
     })
 
@@ -14,8 +14,11 @@ function getMessages() {
 
 function validateMessages(messages){
     const passcodeAttempt = document.querySelector("#passcode").value
-    for (message in messages) {
-        const messageData = messages[message]
+    for (messageKey in messages) {
+        console.log(messageKey)
+        const messageData = messages[messageKey]
+        console.log(messageData)
+        console.log(" ")
         if (messageData.password === passcodeAttempt) {
             console.log("Correct password!")
             renderMessageAsHtml(messageData.message)
